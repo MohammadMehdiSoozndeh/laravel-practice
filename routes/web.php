@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Users;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-//    return view('user');
-    return redirect('/about');
-});
-
-//Route::get('/about', function () {
-//    return view('about');
-//});
-Route::view('about', 'about');
-Route::view('contact', 'contact');
-
-Route::get('users/{user}', [Users::class, 'index']);
+Route::get("user", [UsersController::class, 'loadView']);

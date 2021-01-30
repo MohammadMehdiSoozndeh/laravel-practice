@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UsersController extends Controller
 {
     public function loadView()
     {
-        return view("users");
+        echo "This is UsersController extends Controller.";
+//        return DB::select("select * form users");
+        return view("home");
     }
 
     public function getData(Request $request)

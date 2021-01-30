@@ -20,7 +20,7 @@ Route::get("/", function () {
 
 Route::post("users", [UsersController::class, 'getData']);
 Route::view("login", "users")->middleware('protectedPage');
-Route::view("home", "home");
+Route::get("home", [UsersController::class, 'loadView']);
 
 Route::View("noaccess", "noaccess");
 

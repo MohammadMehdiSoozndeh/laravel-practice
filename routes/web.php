@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function (){
+Route::get("/", function () {
     return redirect('/login');
 });
 
@@ -22,5 +22,11 @@ Route::post("users", [UsersController::class, 'getData']);
 Route::view("login", "users");
 Route::view("home", "home");
 
+Route::group(['middleware' => ['protectedPages']], function () {
+    Route::view("users",'users');
+    Route::view("login", "users");
+});
+
 Route::View("noaccess", "noaccess");
+
 

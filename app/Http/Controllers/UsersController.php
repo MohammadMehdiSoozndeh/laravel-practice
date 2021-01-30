@@ -10,4 +10,9 @@ class UsersController extends Controller
     {
         return view("users");
     }
+
+    public function getData(Request $request)
+    {
+        return $request->input();
+    }
 }

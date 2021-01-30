@@ -14,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("user", [UsersController::class, 'loadView']);
+Route::post("users", [UsersController::class, 'getData']);
+Route::view("login", "users");
+
+//Route::view("users", "users");

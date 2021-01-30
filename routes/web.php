@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get("/", function (){
+    return redirect('/login');
+});
+
 Route::post("users", [UsersController::class, 'getData']);
 Route::view("login", "users");
+Route::view("home", "home");
 
-//Route::view("users", "users");
+Route::View("noaccess", "noaccess");
+

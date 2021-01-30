@@ -13,6 +13,10 @@ class UsersController extends Controller
 
     public function getData(Request $request)
     {
+        $request->validate([
+            'username' => 'required | min : 3 | max : 10',
+            'userPassword' => 'required | min : 8 '
+        ]);
         return $request->input();
     }
 }

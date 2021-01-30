@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuyController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,4 @@ Route::get("home", [UsersController::class, 'loadView']);
 
 Route::View("noaccess", "noaccess");
 
-
+Route::get("guys",[GuyController::class,'fetchData']);

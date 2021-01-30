@@ -876,5 +876,10 @@
       <ObjectGrants>ALL PRIVILEGES|meti_db
 </ObjectGrants>
     </user>
+    <table id="277" parent="3" name="guys"/>
+    <column id="278" parent="277" name="name">
+      <Position>1</Position>
+      <DataType>text|0s</DataType>
+    </column>
   </database-model>
 </dataSource>

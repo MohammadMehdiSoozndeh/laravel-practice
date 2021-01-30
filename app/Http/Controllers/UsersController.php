@@ -9,8 +9,8 @@ class UsersController extends Controller
 {
     public function loadView()
     {
-        echo "This is UsersController extends Controller.";
-//        return DB::select("select * form users");
+        echo "This is UsersController extends Controller.\n\n";
+//        return DB::select("select * from user_data");
         return view("home");
     }
 

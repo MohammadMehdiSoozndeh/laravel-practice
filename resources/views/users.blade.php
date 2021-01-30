@@ -1,27 +1,21 @@
-<h1>Login for Users</h1>
+<h1>Users list in api</h1>
 
-<form action="users" method="POST">
-    @csrf
-    <label>
-        <input type="text" value="{{old('username')}}" name="username" placeholder="enter user id">
-    </label>
-    <br>
-    <span style="color: darkred">
-        @error('username') {{$message}} @enderror
-    </span>
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Profile Photo</td>
+    </tr>
+    @foreach($users as $item)
+        <tr>
+            <td>{{$item['id']}}</td>
+            <td>{{$item['first_name']}}</td>
+            <td>{{$item['email']}}</td>
+            <td><img src={{$item['avatar']}}></td>
+        </tr>
+    @endforeach
+</table>
 
-    <br><br>
-    <label>
-        <input type="password" value="{{old('userPassword')}}" name="userPassword" placeholder="enter password">
-    </label>
-
-    <br>
-    <span style="color: darkred">
-        @error('userPassword') {{$message}} @enderror
-    </span>
-
-    <br><br>
-    <button type="submit">Login</button>
-</form>
 <br><br>
 

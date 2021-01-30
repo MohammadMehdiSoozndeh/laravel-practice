@@ -2,24 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class UsersController extends Controller
 {
-    public function loadView()
+    function index()
     {
-        echo "This is UsersController extends Controller.\n\n";
-//        return DB::select("select * from user_data");
-        return view("home");
-    }
-
-    public function getData(Request $request)
-    {
-        $request->validate([
-            'username' => 'required | min : 3 | max : 10',
-            'userPassword' => 'required | min : 8 '
-        ]);
-        return $request->input();
+        $fakeUsers = Http::get("https://reqres.in/api/users?page=1");
+        return view('users', ['users' => $fakeUsers['data']]);
     }
 }

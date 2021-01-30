@@ -15,14 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get("/", function () {
-    return redirect('/home');
-});
+Route::get("users", [UsersController::class, 'index']);
 
-Route::post("users", [UsersController::class, 'getData']);
-Route::view("login", "users")->middleware('protectedPage');
-Route::get("home", [UsersController::class, 'loadView']);
-
-Route::View("noaccess", "noaccess");
-
-Route::get("guys",[GuyController::class,'fetchData']);

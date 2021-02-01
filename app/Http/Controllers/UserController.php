@@ -8,6 +8,6 @@ class UserController extends Controller
 {
     function testRequest(Request $req)
     {
-        return $req->q;
+        return $req->all();
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +18,9 @@ Route::get('/fun/{str}', function ($str) {
     return $str;
 });
 
-Route::get("users", [UsersController::class, 'index']);
+Route::put("users", [UserController::class, 'testRequest']);
+Route::view("login", "users");
+
 
 Route::fallback(function () {
     return "اشتباه زدی داداش";

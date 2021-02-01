@@ -1,21 +1,16 @@
-<h1>Users list in api</h1>
+<h1>Login</h1>
 
-<table border="1">
-    <tr>
-        <td>ID</td>
-        <td>Name</td>
-        <td>Email</td>
-        <td>Profile Photo</td>
-    </tr>
-    @foreach($users as $item)
-        <tr>
-            <td>{{$item['id']}}</td>
-            <td>{{$item['first_name']}}</td>
-            <td>{{$item['email']}}</td>
-            <td><img src={{$item['avatar']}}></td>
-        </tr>
-    @endforeach
-</table>
+<form action="users" method="POST">
+    {{method_field('PUT')}}
+    @csrf
+    <label>
+        <input type="text" name="user" placeholder="username">
+    </label> <br><br>
+    <label>
+        <input type="password" name="password" placeholder="password">
+    </label> <br><br>
+    <button type="submit">--> LOGIN <--</button>
+</form>
 
 <br><br>
 

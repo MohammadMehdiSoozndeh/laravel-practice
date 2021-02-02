@@ -877,9 +877,20 @@
 </ObjectGrants>
     </user>
     <table id="277" parent="3" name="guys"/>
-    <column id="278" parent="277" name="name">
+    <column id="278" parent="277" name="id">
       <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="279" parent="277" name="name">
+      <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
+    <key id="280" parent="277" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

@@ -16,11 +16,17 @@
         <td style="font-family: 'Nunito', sans-serif; color: #718096">
             Name
         </td>
+        <td style="font-family: 'Nunito', sans-serif; color: #718096">
+            Operation
+        </td>
     </tr>
     @foreach($items as $item)
         <tr>
             <td style="font-family: 'Nunito', sans-serif">
                 {{$item['name']}}
+            </td>
+            <td>
+                <a style="font-family: 'Nunito', sans-serif; color: red" href="delete/{{$item['id']}}"> - </a>
             </td>
         <tr>
     @endforeach

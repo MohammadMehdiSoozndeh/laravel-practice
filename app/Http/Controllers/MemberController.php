@@ -13,15 +13,20 @@ class MemberController extends Controller
         $member->name = $request->name;
         $member->save();
 
-
         return redirect('add');
     }
 
     function show()
     {
-        $data = Guy::paginate(5);
+        $data = Guy::paginate(10);
         return view('addMember', ['items' => $data]);
     }
 
+    function remove($id)
+    {
+        $data = Guy::find($id);
+        $data->delete();
+        return redirect('add');
+    }
 
 }

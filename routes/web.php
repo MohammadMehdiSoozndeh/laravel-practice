@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\UploadController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +18,8 @@ Route::get('/fun/{str}', function ($str) {
     return $str;
 });
 
-Route::view('upload', 'up');
-Route::post('upload', [UploadController::class, 'index']);
+Route::post('add', [MemberController::class, 'addName']);
+Route::get('add', [MemberController::class, 'show']);
 
 Route::fallback(function () {
     return "اشتباه زدی داداش";

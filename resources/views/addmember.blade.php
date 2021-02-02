@@ -26,7 +26,10 @@
                 {{$item['name']}}
             </td>
             <td>
-                <a style="font-family: 'Nunito', sans-serif; color: red" href="delete/{{$item['id']}}"> - </a>
+                <a style="font-family: 'Nunito', sans-serif; color: red" href="delete/{{$item['id']}}"> delete </a>
+            </td>
+            <td>
+                <a style="font-family: 'Nunito', sans-serif; color: red" href="edit/{{$item['id']}}"> edit </a>
             </td>
         <tr>
     @endforeach

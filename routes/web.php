@@ -20,7 +20,9 @@ Route::get('/fun/{str}', function ($str) {
 
 Route::post('add', [MemberController::class, 'addName']);
 Route::get('add', [MemberController::class, 'show']);
-Route::get('delete/{name}',[MemberController::class, 'remove']);
+Route::get('delete/{id}',[MemberController::class, 'remove']);
+Route::get('edit/{id}',[MemberController::class, 'edit']);
+Route::post('edit/',[MemberController::class, 'applyEdit']);
 
 Route::fallback(function () {
     return "اشتباه زدی داداش";

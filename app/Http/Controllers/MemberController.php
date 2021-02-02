@@ -29,4 +29,18 @@ class MemberController extends Controller
         return redirect('add');
     }
 
+    function edit($id)
+    {
+        $data = Guy::find($id);
+        return view('edit', ['data' => $data]);
+    }
+
+    function applyEdit(Request $request)
+    {
+        $data = Guy::find($request->id);
+        $data->name = $request->name;
+        $data->save();
+        return redirect('add');
+    }
+
 }

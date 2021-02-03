@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\QueryBuilderFun;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,8 @@ Route::get('add', [MemberController::class, 'show']);
 Route::get('delete/{id}',[MemberController::class, 'remove']);
 Route::get('edit/{id}',[MemberController::class, 'edit']);
 Route::post('edit/',[MemberController::class, 'applyEdit']);
+
+Route::get('/query',[QueryBuilderFun::class, 'memberAggregateMethods']);
 
 Route::fallback(function () {
     return "اشتباه زدی داداش";

@@ -34,4 +34,18 @@ class FunnyAPI extends Controller
         else
             return ["Result" => "ERR"];
     }
+
+    function delete($key)
+    {
+        $guy = Guy::find($key);
+        if ($guy->delete())
+            return ["Result" => "Successful"];
+        else
+            return ["Result" => "ERR"];
+    }
+
+    function search($name)
+    {
+        return Guy::where('name', 'like', "%" . $name . "%")->get();
+    }
 }

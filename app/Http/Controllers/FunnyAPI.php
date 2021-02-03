@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Guy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FunnyAPI extends Controller
 {
@@ -47,5 +48,24 @@ class FunnyAPI extends Controller
     function search($name)
     {
         return Guy::where('name', 'like', "%" . $name . "%")->get();
+    }
+
+    function validateAdd(Request $request)
+    {
+        $rules = array('name' => 'required | string');
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails())
+            return response()->json($validator->errors(), 401);
+        else {
+            $new = new Guy();
+            $new->name = $request->get('name');
+            $new->save();
+
+            if ($new->save())
+                return ["Result" => "Successful"];
+            else
+                return ["Result" => "ERR"];
+        }
     }
 }

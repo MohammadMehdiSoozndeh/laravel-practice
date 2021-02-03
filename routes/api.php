@@ -19,12 +19,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('', function () {
+    return "We're good to go";
+});
 
 Route::get('data', [FunnyAPI::class, 'getData']);
 Route::post('add-guy', [FunnyAPI::class, 'addGuy']);
 Route::put('update', [FunnyAPI::class, 'update']);
 Route::delete('delete/{key}', [FunnyAPI::class, 'delete']);
-Route::get('search/{name}',[FunnyAPI::class,'search']);
+Route::get('search/{name}', [FunnyAPI::class, 'search']);
+Route::post('valid-add', [FunnyAPI::class, 'validateAdd']);
 
 Route::get('hello', function () {
     return ["result" => "Hello World"];

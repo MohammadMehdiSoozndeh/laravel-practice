@@ -21,3 +21,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('data', [FunnyAPI::class, 'getData']);
+Route::post('add-guy', [FunnyAPI::class, 'addGuy']);
+Route::put('update', [FunnyAPI::class, 'update']);
+
+Route::get('hello', function () {
+    return ["result" => "Hello World"];
+});

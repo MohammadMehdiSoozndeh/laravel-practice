@@ -21,11 +21,14 @@ Route::get('/fun/{str}', function ($str) {
 
 Route::post('add', [MemberController::class, 'addName']);
 Route::get('add', [MemberController::class, 'show']);
-Route::get('delete/{id}',[MemberController::class, 'remove']);
-Route::get('edit/{id}',[MemberController::class, 'edit']);
-Route::post('edit/',[MemberController::class, 'applyEdit']);
+Route::get('delete/{id}', [MemberController::class, 'remove']);
+Route::get('edit/{id}', [MemberController::class, 'edit']);
+Route::post('edit/', [MemberController::class, 'applyEdit']);
 
-Route::get('/query',[QueryBuilderFun::class, 'memberAggregateMethods']);
+Route::get('view/{i}', [MemberController::class, 'view']);
+Route::get('view/name/{i:name}', [MemberController::class, 'view']);
+
+Route::get('/query', [QueryBuilderFun::class, 'memberAggregateMethods']);
 
 Route::fallback(function () {
     return "اشتباه زدی داداش";

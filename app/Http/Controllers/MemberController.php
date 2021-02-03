@@ -43,4 +43,10 @@ class MemberController extends Controller
         return redirect('add');
     }
 
+    function view(Guy $i)
+    {
+        return $i;
+    }
+
+
 }

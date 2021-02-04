@@ -68,4 +68,6 @@ class FunnyAPI extends Controller
                 return ["Result" => "ERR"];
         }
     }
+
+
 }

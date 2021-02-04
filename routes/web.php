@@ -30,6 +30,6 @@ Route::get('view/name/{i:name}', [MemberController::class, 'view']);
 
 Route::get('/query', [QueryBuilderFun::class, 'memberAggregateMethods']);
 
-Route::fallback(function () {
-    return "اشتباه زدی داداش";
-});
+//Route::fallback(function () {
+//    return response($php_errormsg);
+//});

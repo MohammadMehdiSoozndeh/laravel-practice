@@ -29,7 +29,3 @@ Route::get('view/{i}', [MemberController::class, 'view']);
 Route::get('view/name/{i:name}', [MemberController::class, 'view']);
 
 Route::get('/query', [QueryBuilderFun::class, 'memberAggregateMethods']);
-
-//Route::fallback(function () {
-//    return response($php_errormsg);
-//});

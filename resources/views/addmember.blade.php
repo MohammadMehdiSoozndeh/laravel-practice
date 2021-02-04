@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <h1 style="font-family: 'Nunito', sans-serif; color: darkred">Add Name</h1>
 <br>
 <form action="" method="POST">
@@ -11,30 +13,28 @@
 
 <h3 style="font-family: 'Nunito', sans-serif; color: mediumvioletred"></h3>
 <br>
-<table border="1">
+<table class="table table-striped">
+    <thead>
     <tr>
-        <td style="font-family: 'Nunito', sans-serif; color: #718096">
-            Name
-        </td>
-        <td style="font-family: 'Nunito', sans-serif; color: #718096">
-            Operation
-        </td>
+        <th scope="col">Name</th>
+        <th scope="col">Operation</th>
+        <th scope="col">Operation</th>
     </tr>
+    </thead>
+    <tbody>
     @foreach($items as $item)
         <tr>
-            <td style="font-family: 'Nunito', sans-serif">
-                {{$item['name']}}
-            </td>
+            <th scope="row">{{$item['name']}}</th>
             <td>
-                <a style="font-family: 'Nunito', sans-serif; color: red" href="delete/{{$item['id']}}"> delete </a>
+                <a href="delete/{{$item['id']}}">
+                    <i class="fa fa-trash">Delete</i>
+                </a>
             </td>
-            <td>
-                <a style="font-family: 'Nunito', sans-serif; color: red" href="edit/{{$item['id']}}"> edit </a>
-            </td>
-        <tr>
+            <td><a style="font-family: 'Nunito', sans-serif; color: red" href="edit/{{$item['id']}}"> edit </a></td>
+        </tr>
     @endforeach
 </table>
-
+<br>
 <span>
     {{$items->links()}}
 </span>

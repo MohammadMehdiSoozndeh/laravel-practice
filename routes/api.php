@@ -39,4 +39,6 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     });
 });
 
+Route::post('/upload', [\App\Http\Controllers\FileController::class, 'upload']);
+
 Route::post('login', [\App\Http\Controllers\UserController::class, 'index']);
